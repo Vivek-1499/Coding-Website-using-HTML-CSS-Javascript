@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Website</title>
+<style>
+    /* Basic styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    nav {
+        background-color: #444;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+    }
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+    }
+    nav a:hover {
+        background-color: #555;
+    }
+    section {
+        padding: 20px;
+        text-align: center;
+    }
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    /* Styles for the form */
+    form {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to our Restaurant</h1>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#reservation">Reservation</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+    <h2>About Us</h2>
+    <p>Welcome to our restaurant! We pride ourselves on serving delicious meals made from fresh, locally sourced ingredients. Whether you're looking for a casual dining experience or a special celebration, we have something for everyone.</p>
+</section>
+
+<section id="menu">
+    <h2>Our Menu</h2>
+    <p>Explore our mouthwatering menu featuring a variety of dishes crafted by our talented chefs. From appetizers to desserts, there's something to satisfy every craving.</p>
+    <p><a href="#reservation">Book a table</a> to experience our culinary delights firsthand!</p>
+</section>
+
+<section id="reservation">
+    <h2>Reservation</h2>
+    <p>Ready to dine with us? Use our easy online reservation system to book a table for your next visit. Whether it's a romantic dinner for two or a gathering with friends and family, we'll make sure your dining experience is unforgettable.</p>
+    <form id="bookingForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" required>
+
+        <label for="guests">Number of Guests:</label>
+        <input type="number" id="guests" name="guests" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" required>
+
+        <input type="submit" value="Book Table">
+    </form>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>We'd love to hear from you! If you have any questions, feedback, or special requests, feel free to get in touch with our team. You can reach us by phone, email, or visit us in person during our opening hours.</p>
+    <p>Phone: 123-456-7890</p>
+    <p>Email: info@example.com</p>
+</section>
+
+<footer>
+    <p>&copy; 2024 Restaurant Name. All rights reserved.</p>
+</footer>
+
+<script>
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+        
+        // Get form values
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var guests = document.getElementById("guests").value;
+        var date = document.getElementById("date").value;
+        var time = document.getElementById("time").value;
+
+        // Construct confirmation message
+        var confirmationMessage = "Booking Details:\n\n";
+        confirmationMessage += "Name: " + name + "\n";
+        confirmationMessage += "Email: " + email + "\n";
+        confirmationMessage += "Phone: " + phone + "\n";
+        confirmationMessage += "Number of Guests: " + guests + "\n";
+        confirmationMessage += "Date: " + date + "\n";
+        confirmationMessage += "Time: " + time + "\n\n";
+        confirmationMessage += "Your table has been successfully booked!";
+
+        // Show popup with confirmation message
+        alert(confirmationMessage);
+        
+        // You can send this data to the server for further processing (e.g., saving to a database)
+        // Example: You can use AJAX to send the form data to the server
+        
+        // Clear the form after submission
+        document.getElementById("bookingForm").reset();
+    });
+</script>
+
+</body>
+</html>
